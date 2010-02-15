@@ -14,9 +14,6 @@
   color: #f00;
   margin: 25px 0;
 }
-#calculator #errors ul {
-  padding-left: 25px;
-}
 
 #result {
   display: none;
