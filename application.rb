@@ -12,8 +12,8 @@ get '/triangle/?' do
   redirect '/', 301
 end
 
-get '/tour' do
-  erb :tour
+get '/about' do
+  erb :about
 end
 
 get '/download' do

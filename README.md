@@ -1,7 +1,7 @@
 CosSinCalc
 ==========
 
-CosSinCalc is an web application able to calculate the variables of a triangle.  
+CosSinCalc is a web application able to calculate the variables of a triangle.  
 The live site is located at <http://cossincalc.com/>.
 
 This is the source code of the website including the JavaScripts.  
