@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>CosSinCalc Triangle Calculator</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="CosSinCalc Triangle Calculator calculates the sides, angles, heights, medians, angle bisectors, area and circumference of a triangle."/>
+    <meta name="keywords" content="cossincalc, triangle, calculator, calculate, tool"/>
+    <meta name="author" content="Molte Emil Strange Andersen"/>
+    <meta name="verify-v1" content="RRuca04ksojfTunp0N5xD+IzH42yJWt5dKGvvD5E5ZE="/>
+    <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <%= @html_head %>
+  </head>
+  <body>
+    <div id="header">
+      <a href="/" class="logo"><img src="/images/logo.gif" alt="CosSinCalc logo" title="CosSinCalc" /></a>
+      <% if @header_spotlight %><div class="spotlight"><%= @header_spotlight %></div><% end %>
+      <ul class="nav">
+        <%= navigation_item('Calculator', (current_page?('/') ? '#calculator' : '/')) %>
+        <%= navigation_item('Result',     '#result', { :class => 'disabled' }) %>
+        <%= navigation_item('Tour',       '/tour') %>
+        <%= navigation_item('Download',   '/download') %>
+        <%= navigation_item('Feedback',   '/feedback') %>
+      </ul>
+    </div>
+    
+    <div id="main">
+      <%= yield %>
+      
+      <div id="tooltip"></div>
+    </div>
+    
+    <div id="footer">
+      <p>CosSinCalc by Molte Emil Strange Andersen (<a href="mailto:molte@cossincalc.com">molte@cossincalc.com</a>)</p>
+      <%= @page_footer %>
+    </div>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="/scripts/application.js"></script>
+    <%= @html_scripts %>
+    <!-- Google Analytics tracking code -->
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-4329102-2");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+  </body>
+</html>

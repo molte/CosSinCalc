@@ -1,0 +1,15 @@
+#header .spotlight, #header .nav, #main div.options {
+  visibility: hidden;
+}
+
+#main a, #main a:visited, #footer a, #footer a:visited {
+  color: #000;
+}
+
+#main .spotlight {
+  display: none;
+}
+
+#origination_notice {
+  display: block;
+}

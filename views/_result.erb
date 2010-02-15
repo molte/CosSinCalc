@@ -1,0 +1,78 @@
+<div id="result" class="pane">
+  <div class="spotlight">
+    <a rel="#url" id="save_url" title="Save, bookmark or share the URL to this calculation for later reference." href="#">Save URL</a> |
+    <a href="#" title="Print the calculation result (printer-friendly)." id="print">Print result</a>
+  </div>
+  
+  <p id="calculation_notice">
+    Two triangles can be constructed based on the variables given (see <a href="http://en.wikipedia.org/wiki/Law_of_sines#The_ambiguous_case">Wikipedia</a> for explanation).
+    <a href="#" id="show_alternative">Show other solution.</a>
+  </p>
+  
+  <div class="slideable">
+    <div class="options">
+      <a title="Increase the amount of digits shown in the result." href="#" id="increase_precision">More digits</a> |
+      <a title="Decrease the amount of digits shown in the result." href="#" id="decrease_precision">Less digits</a>
+    </div>
+    <h3>Variables overview</h3>
+    <div class="pane">
+      <table class="variables">
+        <tr>
+          <th colspan="2">Angles</th>
+          <th colspan="2">Sides</th>
+          <th colspan="2">Altitudes</th>
+          <th colspan="2">Medians</th>
+          <th colspan="2">Angle bisectors</th>
+        </tr>
+        <% %w{ a b c }.each do |var| %>
+          <tr>
+            <td><%= var.upcase %> = </td>
+            <td id="angle_<%= var %>_result" class="variable">&nbsp;</td>
+            <td><%= var %> = </td>
+            <td id="side_<%= var %>_result" class="variable">&nbsp;</td>
+            <td>h<sub><%= var.upcase %></sub> = </td>
+            <td id="altitude_<%= var %>_result" class="variable">&nbsp;</td>
+            <td>m<sub><%= var %></sub> = </td>
+            <td id="median_<%= var %>_result" class="variable">&nbsp;</td>
+            <td>t<sub><%= var.upcase %></sub> = </td>
+            <td id="anglebisector_<%= var %>_result" class="variable">&nbsp;</td>
+          </tr>
+        <% end %>
+      </table>
+      
+      <table>
+        <tr>
+          <th>Area</th>
+          <td class="variable" id="area_result">&nbsp;</td>
+        </tr>
+        <tr>
+          <th>Circumference</th>
+          <td class="variable" id="circumference_result">&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <div class="slideable">
+    <h3>Drawing</h3>
+    <div class="pane">
+      <div id="drawing"></div>
+    </div>
+  </div>
+  
+  <div class="slideable">
+    <h3>Formulae</h3>
+    <div class="pane">
+      <p>The following steps have been taken to calculate the result:</p>
+      <div id="calculation_steps"></div>
+    </div>
+  </div>
+  
+  <div class="overlay" id="url">
+    <h2>Save URL</h2>
+    <p>Drag this link into your bookmarks bar: <a href="#" id="calculation_link">CosSinCalc calculation</a>.</p>
+    <p>... or copy the URL: <span id="calculation_url">&bnsp;</span></p>
+  </div>
+</div>
+
+<% append_footer '<p id="origination_notice"></p>' %>

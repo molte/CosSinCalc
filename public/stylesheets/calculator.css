@@ -1,0 +1,34 @@
+#calculator .buttons {
+  clear: both;
+}
+#calculator table.variables {
+  float: left;
+}
+#calculator .drawing img {
+  margin: 10px;
+  width: 308px;
+  height: 170px;
+  background-image: url(/images/triangle.png);
+}
+#calculator #errors {
+  color: #f00;
+  margin: 25px 0;
+}
+#calculator #errors ul {
+  padding-left: 25px;
+}
+
+#result {
+  display: none;
+}
+#result td.variable {
+  text-align: right;
+  padding-right: 20px;
+}
+#calculation_notice {
+  margin: 15px 10px;
+}
+
+#origination_notice {
+  display: none;
+}

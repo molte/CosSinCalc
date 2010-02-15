@@ -1,0 +1,62 @@
+<form id="calculator" action="/" method="get" class="pane" onreset="return false;">
+  <table class="variables">
+    <tr>
+      <th colspan="2">Angles</th>
+      <th colspan="2">Sides</th>
+    </tr>
+    <% %w{ a b c }.each_with_index do |var, index| %>
+      <tr>
+        <td><label for="angle_<%= var %>"><%= var.upcase %>:</label></td>
+        <td><input type="text" id="angle_<%= var %>" name="angle_<%= var %>" class="angle number" tabindex="<%= index + 1 %>" /></td>
+        <td><label for="side_<%= var %>"><%= var %>:</label></td>
+        <td><input type="text" id="side_<%= var %>" name="side_<%= var %>" class="side number" tabindex="<%= index + 4 %>" /></td>
+      </tr>
+    <% end %>
+  </table>
+  
+  <div class="drawing">
+    <img src="/images/triangle_overlay_empty.png" usemap="#triangle_variables_map" alt="triangle drawing" title="Click somewhere on the drawing to focus the associated text field." />
+    <map name="triangle_variables_map" id="triangle_variables_map">
+      <area shape="circle" coords="25,153,32" alt="A" href="#angle_a" />
+      <area shape="circle" coords="151,25,32" alt="B" href="#angle_b" />
+      <area shape="circle" coords="278,112,32" alt="C" href="#angle_c" />
+      
+      <area shape="circle" coords="217,57,32" alt="a" href="#side_a" />
+      <area shape="circle" coords="156,142,32" alt="b" href="#side_b" />
+      <area shape="circle" coords="90,75,32" alt="c" href="#side_c" />
+    </map>
+  </div>
+  
+  <p class="buttons">
+    <input type="submit" class="commit" value="Calculate" />
+    <input type="button" value="Clear" id="clear" />
+  </p>
+  
+  <div id="errors"></div>
+  
+  <div class="slideable collapsed">
+    <h3>Advanced settings</h3>
+    <div class="pane">
+      <table>
+        <tr>
+          <th colspan="3">Angle unit</th>
+        </tr>
+        <tr>
+          <td><input type="radio" name="angle_unit" id="angle_unit_degree" value="degree" checked="checked" /></td>
+          <td><label for="angle_unit_degree">degrees</label></td>
+          <td style="font-size: 12px;">(180&deg; in a triangle)</td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="angle_unit" id="angle_unit_gon" value="gon" /></td>
+          <td><label for="angle_unit_gon">gon</label></td>
+          <td style="font-size: 12px;">(200 gon in a triangle)</td>
+        </tr>
+        <tr>
+          <td><input type="radio" name="angle_unit" id="angle_unit_radian" value="radian" /></td>
+          <td><label for="angle_unit_radian">radians</label></td>
+          <td style="font-size: 12px;">(&pi; rad in a triangle)</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</form>
