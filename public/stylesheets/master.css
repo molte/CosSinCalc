@@ -193,6 +193,7 @@ p {
   overflow: hidden;
   position: relative;
   margin-bottom: 20px;
+  min-width: 900px;
 }
 #header .spotlight {
   margin-left: 210px;
