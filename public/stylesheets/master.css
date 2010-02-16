@@ -40,12 +40,13 @@ h2 {
   font-weight: bold;
   font-size: 18px;
   color: #e90;
+  margin: 14px 0 7px;
 }
 h3 {
   font-size: 15px;
   color: #666;
 }
-p, h1, h2, h3, #main .slideable, #main .slideable .pane, #main li {
+p, h1, h3, #main .slideable, #main .slideable .pane, #main li {
   margin: 7px 0;
 }
 p {
