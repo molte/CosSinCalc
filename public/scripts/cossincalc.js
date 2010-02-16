@@ -1,6 +1,8 @@
 /**
- * CosSinCalc version 6.0.0
+ * CosSinCalc version 6.0.1
  * http://cossincalc.com/
+ * 
+ * Note: This file should be minified at http://www.refresh-sf.com/yui/ set to "Minify only, no symbol obfuscation.".
  * 
  * Copyright (c) 2010 Molte Emil Strange Andersen
  * 
@@ -25,7 +27,7 @@
 
 
 var CosSinCalc = {};
-CosSinCalc.VERSION = "6.0.0";
+CosSinCalc.VERSION = "6.0.1";
 
 /**
  * -------------------------------------------------------
@@ -722,7 +724,7 @@ CosSinCalc.Triangle.Drawing = function(t, canvasSize, padding) {
     var background = paper.rect(dimensions.x - 4, dimensions.y - 2, dimensions.width + 8, dimensions.height + 4).attr({
       'fill': '#fff',
       'fill-opacity': 0.5,
-      'stroke-width': 0
+      'stroke': 'none'
     }).insertBefore(label);
     
     return label;
