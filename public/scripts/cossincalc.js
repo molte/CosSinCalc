@@ -1,5 +1,5 @@
 /**
- * CosSinCalc version 6.0.2
+ * CosSinCalc version 6.0.3
  * http://cossincalc.com/
  * 
  * Note: This file should be minified at http://www.refresh-sf.com/yui/ set to "Minify only, no symbol obfuscation.".
@@ -27,7 +27,7 @@
 
 
 var CosSinCalc = {};
-CosSinCalc.VERSION = "6.0.2";
+CosSinCalc.VERSION = "6.0.3";
 
 /**
  * -------------------------------------------------------
@@ -546,7 +546,7 @@ CosSinCalc.Triangle.Calculator = function(t) {
    */
   function calculateMedians() {
     t.each(function(v, rest) {
-      t.medians[v] = Math.sqrt( ( 2 * square(t.sides[rest[0]]) + 2 * square(t.sides[rest[1]]) - square(t.sides[v]) ) / 2 );
+      t.medians[v] = Math.sqrt( ( 2 * square(t.sides[rest[0]]) + 2 * square(t.sides[rest[1]]) - square(t.sides[v]) ) / 4 );
     });
   }
   
