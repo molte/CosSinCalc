@@ -1,5 +1,5 @@
 /**
- * CosSinCalc version 6.0.3
+ * CosSinCalc version 6.0.4
  * http://cossincalc.com/
  * 
  * Note: This file should be minified at http://www.refresh-sf.com/yui/ set to "Minify only, no symbol obfuscation.".
@@ -27,7 +27,7 @@
 
 
 var CosSinCalc = {};
-CosSinCalc.VERSION = "6.0.3";
+CosSinCalc.VERSION = "6.0.4";
 
 /**
  * -------------------------------------------------------
@@ -430,7 +430,7 @@ CosSinCalc.Triangle.Calculator = function(t) {
     t.each(function(v, rest) {
       if (!t.angles[v]) {
         t.angles[v] = calculateAngleBySides(v, rest);
-        t.equation("@1=\\arccos(\\frac{$2^2+$3^2-$1^2}{2\\cdot $2\\cdot $3})", v, rest[0], rest[1]);
+        t.equation("@1=\\arccos\\left(\\frac{$2^2+$3^2-$1^2}{2\\cdot $2\\cdot $3}\\right)", v, rest[0], rest[1]);
       }
     });
   }
@@ -464,12 +464,12 @@ CosSinCalc.Triangle.Calculator = function(t) {
         t.each(rest, function(v2) {
           if (t.sides[v2]) {
             t.angles[v2] = Math.asin( Math.sin(t.angles[v]) * t.sides[v2] / t.sides[v] );
-            t.equation("@2=\\arcsin(\\frac{\\sin(@1)\\cdot $2}{$1})", v, v2);
+            t.equation("@2=\\arcsin\\left(\\frac{\\sin(@1)\\cdot $2}{$1}\\right)", v, v2);
             
             if (isAmbiguousCase(v, v2)) {
               t.copyAsAlternative();
               t.alternative.angles[v2] = Math.PI - t.angles[v2];
-              t.alternative.equation("@2=" + t.formatAngle(Math.PI, t.angles.unit, t.decimals, true) + "-\\arcsin(\\frac{\\sin(@1)\\cdot $2}{$1})", v, v2);
+              t.alternative.equation("@2=" + t.formatAngle(Math.PI, t.angles.unit, t.decimals, true) + "-\\arcsin\\left(\\frac{\\sin(@1)\\cdot $2}{$1}\\right)", v, v2);
               
               var alternativeCalculator = new CosSinCalc.Triangle.Calculator(t.alternative);
               alternativeCalculator.calculateSideAndAngle();
