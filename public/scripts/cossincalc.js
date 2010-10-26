@@ -27,7 +27,7 @@
 
 
 var CosSinCalc = {};
-CosSinCalc.VERSION = "6.0.4";
+CosSinCalc.VERSION = "6.0.5";
 
 /**
  * -------------------------------------------------------
