@@ -1,5 +1,5 @@
 /**
- * CosSinCalc version 6.0.4
+ * CosSinCalc version 6.0.5
  * http://cossincalc.com/
  * 
  * Note: This file should be minified at http://www.refresh-sf.com/yui/ set to "Minify only, no symbol obfuscation.".
@@ -335,7 +335,7 @@ CosSinCalc.Parser = {
     value = this.format(this.convertAngle(value, unit, true), decimals);
     switch (unit) {
       case 'degree':
-        return (value + (isLatex ? "\\textdegree" : '°'));
+        return (value + (isLatex ? "^{\\circ}" : '°'));
       case 'gon':
         return (value + (isLatex ? '\\text{ gon}' : ' gon'));
       default:
