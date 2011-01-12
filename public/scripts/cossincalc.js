@@ -1,5 +1,5 @@
 /**
- * CosSinCalc version 6.0.5
+ * CosSinCalc version 6.0.6
  * http://cossincalc.com/
  * 
  * Note: This file should be minified at http://www.refresh-sf.com/yui/ set to "Minify only, no symbol obfuscation.".
@@ -27,7 +27,7 @@
 
 
 var CosSinCalc = {};
-CosSinCalc.VERSION = "6.0.5";
+CosSinCalc.VERSION = "6.0.6";
 
 /**
  * -------------------------------------------------------
@@ -138,7 +138,7 @@ CosSinCalc.Triangle = function() {
     values = values.split('=')
     values = values[1] + '=' + values[0]
     
-    this.steps.push(symbols + "&\\Rightarrow" + values);
+    this.steps.push(symbols + "&=" + values);
   };
   
   /**
