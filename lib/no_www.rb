@@ -1,20 +1,22 @@
 # Original script written by Trevor at http://almosteffortless.com/2009/11/05/no-www-rack-middleware/
 
-# Websites should have a canonical address. This address shouldn’t begin with “www” because 
-# it’s unnecessary and wasteful. See http://no-www.org/ for details. This middleware catches 
-# requests that begin with “www” and redirects them to the more reasonable non-www address.
+# Websites should have a canonical address. This address shouldn't begin with "www" because 
+# it's unnecessary and wasteful. See http://no-www.org/ for details. This middleware catches 
+# requests that begin with "www" and redirects them to the more reasonable non-www address.
 
 class NoWWW
  
-  STARTS_WITH_WWW = /^www\./i
+  WWW = /^www\./i
   
   def initialize(app)
     @app = app
   end
   
   def call(env)
-    if env['HTTP_HOST'] =~ STARTS_WITH_WWW
-      [301, { 'Location' => Rack::Request.new(env).url.sub(/www\./i, '') }, ['Redirecting...']]
+    request = Rack::Request.new(env)
+    
+    if request.host =~ WWW
+      [301, { 'Location' => request.url.sub(/www\./i, '') }, ['Redirecting...']]
     else
       @app.call(env)
     end
