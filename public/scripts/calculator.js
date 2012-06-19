@@ -1,7 +1,7 @@
-$(function() {
+head.ready(function() {
   
   // Lookup commonly used elements.
-  var calculator      = $('#calculator')
+  var calculator      = $('#calculator');
   var inputs          = $('input.number', calculator);
   var triangleImage   = $('.drawing img', calculator);
   var errorsContainer = $('#errors');
@@ -31,7 +31,7 @@ $(function() {
       writeOutput();
       
       // Enable and switch to result tab.
-      tabs.getTabs().eq(1).removeClass('disabled').click();
+      tabs.eq(1).removeClass('disabled').click();
       
       // Update URL fragment.
       $.bbq.pushState(calculator.serialize(), 2);
@@ -72,7 +72,7 @@ $(function() {
     
     // Render equations.
     var equations = triangle.formatEquations();
-    $('#calculation_steps').html('<p><img src="http://www.codecogs.com/png.latex?' + encodeURIComponent(equations) + '" alt="' + equations + '" />');
+    $('#calculation_steps').html('<img src="http://www.codecogs.com/png.latex?' + encodeURIComponent(equations) + '" alt="' + equations + '" />');
     
     // Draw triangle (asynchronously).
     setTimeout(function() {
@@ -95,10 +95,22 @@ $(function() {
   });
   
   // Make all navigation tabs not linking to another page, act as tab.
-  var tabs = $('#header .nav').tabs('#main > .pane', {
-    current: 'active',
-    tabs: "a[href^='#']",
-    api: true
+  var tabs = $("#header .nav a[href^='#']");
+  var tabPanes = $('#main > .pane');
+  var currentTab = 0;
+  
+  tabs.first().addClass('active');
+  
+  tabs.each(function(i) {
+    $(this).click(function() {
+      if (i != currentTab && !$(this).hasClass('disabled')) {
+        tabs.removeClass('active').eq(i).addClass('active');
+        tabPanes.hide().eq(i).show();
+        currentTab = i;
+      }
+      
+      return false;
+    });
   });
   
   // Change triangle image overlay on form field focus/blur.
@@ -143,15 +155,6 @@ $(function() {
     triangle.decimals = triangle.alternative.decimals;
     writeOutput();
     return false;
-  });
-  
-  $("#save_url").overlay({
-    effect: 'apple',
-    onBeforeLoad: function() {
-      var url = window.location.href;
-      $('#calculation_url').text(url);
-      $('#calculation_link').attr('href', url);
-    }
   });
   
   // Check if a URL to a saved calculation is passed.
