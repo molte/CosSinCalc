@@ -73,10 +73,8 @@ helpers do
   end
   
   def include_javascript(*paths)
-    @html_scripts ||= ''
-    paths.each do |path|
-      @html_scripts << %{<script type="text/javascript" src="/scripts/#{path}.js"></script>}
-    end
+    @javascripts ||= ''
+    @javascripts += paths.map { |p| ", '/scripts/#{p}.js'" }.join
   end
   
   def erb_partial(template)
@@ -86,5 +84,10 @@ helpers do
   def append_footer(html)
     @page_footer ||= ''
     @page_footer << html
+  end
+  
+  def page_meta(title, description)
+    @page_title = "CosSinCalc &#183; #{title}"
+    @meta_description = description
   end
 end
