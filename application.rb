@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'lib/no_www'
+require './lib/no_www'
 
 set :app_file, __FILE__
 
