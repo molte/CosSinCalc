@@ -72,7 +72,7 @@ head.ready(function() {
     
     // Render equations.
     var equations = triangle.formatEquations();
-    $('#calculation_steps').html('<img src="http://www.codecogs.com/png.latex?' + encodeURIComponent(equations) + '" alt="' + equations + '" />');
+    $('#calculation_steps').html(equations);
     
     // Draw triangle (asynchronously).
     setTimeout(function() {
