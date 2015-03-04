@@ -73,6 +73,7 @@ head.ready(function() {
     // Render equations.
     var equations = triangle.formatEquations();
     $('#calculation_steps').html(equations);
+    MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'calculation_steps']);
     
     // Draw triangle (asynchronously).
     setTimeout(function() {
