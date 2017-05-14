@@ -24,10 +24,6 @@ get '/downloads/:file' do
   redirect "https://s3-eu-west-1.amazonaws.com/cossincalc/offline/#{params[:file]}"
 end
 
-get '/feedback' do
-  erb :feedback
-end
-
 not_found do
   erb :'errors/not_found'
 end
