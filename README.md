@@ -10,4 +10,4 @@ If you only need the actual calculator, please see the file at `public/scripts/c
 An offline version of the application can be downloaded at <http://cossincalc.com/downloads/cossincalc-setup-1.0.10.exe>.
 Bugs should be submitted to the [issue tracker](http://github.com/molte/CosSinCalc/issues).
 
-Copyright (c) 2010-2012 Molte Emil Strange Andersen, released under the MIT license (see the `MIT-LICENSE` file).
+Copyright &copy; 2010-2019 Molte Emil Strange Andersen, released under the MIT license (see the `MIT-LICENSE` file).
