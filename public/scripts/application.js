@@ -1,4 +1,4 @@
-head.ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   
   $('.slideable > h3').click(function() {
     $(this).next('.pane').toggle().parent().toggleClass('collapsed');

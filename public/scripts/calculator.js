@@ -1,4 +1,4 @@
-head.ready(function() {
+document.addEventListener("DOMContentLoaded", function() {
   
   // Lookup commonly used elements.
   var calculator      = $('#calculator');
@@ -34,7 +34,7 @@ head.ready(function() {
       tabs.eq(1).removeClass('disabled').click();
       
       // Update URL fragment.
-      $.bbq.pushState(calculator.serialize(), 2);
+      window.history.pushState(null, null, "#" + calculator.serialize());
       
       // Update origination notice to show on print.
       $('#origination_notice').text('Printed from ' + window.location.href + '.');
@@ -158,14 +158,17 @@ head.ready(function() {
     return false;
   });
   
+  
+  
   // Check if a URL to a saved calculation is passed.
-  if ($.param.fragment()) {
+  if (window.location.hash) {
     // Fill in form fields and calculate result.
-    calculator.deserializeObject($.deparam.fragment()).submit();
+    calculator.deserializeObject(window.location.hash.substr(1)).submit();
   }
   else {
     // Autofocus first form field.
     inputs.first().focus();
   }
+  
   
 });

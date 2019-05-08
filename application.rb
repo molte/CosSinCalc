@@ -68,11 +68,6 @@ helpers do
     @html_head << %{<link#{html_attributes attributes} />}
   end
   
-  def include_javascript(*paths)
-    @javascripts ||= ''
-    @javascripts += paths.map { |p| ", '/scripts/#{p}.js'" }.join
-  end
-  
   def erb_partial(template)
     erb(:"_#{template}", :layout => false)
   end

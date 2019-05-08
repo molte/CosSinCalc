@@ -1,8 +1,10 @@
 <% page_meta "Triangle Calculator", "CosSinCalc Triangle Calculator calculates the sides, angles, altitudes, medians, angle bisectors, area and circumference of a triangle." %>
 <% include_stylesheet 'calculator' %>
 <% include_stylesheet 'print', :media => 'print' %>
-<% include_javascript 'raphael.min', 'cossincalc.min', 'jquery.deserialize', 'jquery.ba-bbq.min', 'calculator' %>
-<% @javascripts += ", 'https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'" %>
+
+<% @link_jquery = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" %>
+<% @link_raphael = "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" %>
+<% @link_mathjax = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" %>
 
 <%= erb_partial :form %>
 <%= erb_partial :result %>
