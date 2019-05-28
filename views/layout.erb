@@ -10,13 +10,9 @@
     <link rel="stylesheet" href="/stylesheets/master.css" type="text/css" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <%= @html_head %>
-    <script src="<%= @link_jquery %>"></script>
-    <script src="/scripts/application.js"></script>
-    <script src="<%= @link_raphael %>"></script>
-    <script src="/scripts/cossincalc.min.js"></script>
-    <script src="/scripts/jquery.deserialize.min.js"></script>
-    <script src="/scripts/calculator.js"></script>
-    <script src="<%= @link_mathjax %>"></script>
+    <% @javascripts.each do |js| %>
+      <script src="<%= js %>"></script>
+    <% end %>
     <script>
       // Google Analytics tracking code
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

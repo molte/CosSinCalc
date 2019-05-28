@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+$(function() {
   
   // Lookup commonly used elements.
   var calculator      = $('#calculator');

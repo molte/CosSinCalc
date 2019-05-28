@@ -2,9 +2,9 @@
 <% include_stylesheet 'calculator' %>
 <% include_stylesheet 'print', :media => 'print' %>
 
-<% @link_jquery = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" %>
-<% @link_raphael = "https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js" %>
-<% @link_mathjax = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" %>
+<% include_external_javascript 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js', 'https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js' %>
+<% include_javascript 'application', 'cossincalc.min', 'jquery.deserialize.min', 'calculator' %>
+<% include_external_javascript 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML' %>
 
 <%= erb_partial :form %>
 <%= erb_partial :result %>
