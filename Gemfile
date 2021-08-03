@@ -1,6 +1,6 @@
 source "http://rubygems.org/"
-ruby "2.5.5"
+ruby "2.7.4"
 
-gem "sinatra", "~> 2.0.5"
+gem "sinatra", "~> 2.1.0"
 gem "puma"
 gem "rack-timeout"
